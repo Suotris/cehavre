@@ -1,0 +1,32 @@
+<div class="row myStories">
+    <div class="small-12 columns">
+        <h1>Mes histoires</h1>
+        <div ng-if="!myStories[0]">
+            <p>Vous n'avez encore créé aucune histoire.</p>
+        </div>
+        <ul class="small-block-grid-1">
+            <li ng-repeat="story in myStories | orderBy: -date"
+                class="myStories-{{story.post_status}}">
+                <h3 class="myStories-title" ng-bind-html="story.title"></h3>
+                <div class="myStory-status">{{story.post_status | status_fr}}</div>
+                <div class="myStories-links">
+                    <i class="icon-pencil" ng-click="edit(story.slug)" ng-if="story.post_status != 'publish'"></i>
+                    <i class="icon-eye" ng-click="goto(story.slug)" ng-if="story.post_status == 'publish'"></i>
+                    <i class="icon-trash" ng-click="delete(story.ID)" ng-if="story.post_status != 'publish'"></i>
+                </div>
+                <p class="myStories-date">
+                   <span ng-if="story.post_status == 'publish'">Publié le {{story.date}}</span>
+                   <span ng-if="story.post_status != 'publish'">Modifié le {{story.modified}}</span>
+                </p>
+                <div ng-bind-html="story.excerpt"></div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!--
+[{'myStories-draft': 'story.post_status == &quot;draft&quot;'},
+                            {'myStories-pending': 'false'},
+                            {'myStories-publish': 'story.post_status == &quot;publish&quot;'}]
+-->

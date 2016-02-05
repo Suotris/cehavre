@@ -1,0 +1,13 @@
+<form>
+    <input  type="text"
+            required="true"
+            ng-model="vm.data.log"
+            placeholder="Username or Email">
+    <input  type="password"
+            required="true"
+            ng-model="vm.data.pwd"
+            placeholder="Password">
+    <input  type="submit"
+            ng-click="vm.submit(vm.data)"
+            value="Login">
+</form>

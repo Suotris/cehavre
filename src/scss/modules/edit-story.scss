@@ -1,0 +1,109 @@
+.editor-auth{
+    @extend a;
+}
+
+#editor-info{
+    span,label{
+        @media #{$large-up}{
+            display: block;
+        }
+    }
+
+    div{
+        display: inline-block;
+
+        @media #{$large-up}{
+            display: block;
+        }
+    }
+}
+
+.map-data{
+    color: $monsoon;
+}
+
+#editor-map{
+    margin-bottom: 32px;
+}
+
+#editor-title{
+    @extend h2;
+    height: 3rem;
+}
+
+#editor-buttons{
+    button{
+        width: 160px;
+    }
+}
+
+#editor-title, #editor-content {
+    border: 1px solid $monsoon;
+    margin-bottom: 2rem;
+    color: $oil;
+    vertical-align: text-top;
+}
+
+#editor-content {
+    min-height: 20rem;
+    outline: none;
+    overflow: auto;
+    resize: vertical;
+}
+
+#editor-tags-input, #editor-tags-button {
+    margin-bottom: .1rem;
+}
+
+div#editor-tags div small {
+    width: 220px !important;
+    font-style: italic;
+}
+
+#editor-tags-button {
+    display: inline-block;
+    padding: 8px;
+}
+
+#editor-tags-input {
+    width: 150px;
+    display: inline-block;
+}
+
+.editor-tag {
+    display: inline-block;
+    //background-color: $gainsboro;
+    margin-right: .5rem;
+    margin-top: .1rem;
+    padding: .2rem;
+
+    i {
+        cursor: pointer;
+    }
+}
+
+.editor-tag-del {
+    color: $gainsboro;
+
+    &:hover{
+        color: $alert-color;
+    }
+}
+
+.edit-warning{
+    color: $alert-color;
+}
+
+#editor-image-input{
+    display: none;
+}
+
+#editor-delete-image{
+    @extend a;
+    text-decoration: underline;
+}
+
+.side-box{
+    border-bottom: 1px solid $gainsboro;
+    margin-bottom: 1rem;
+}

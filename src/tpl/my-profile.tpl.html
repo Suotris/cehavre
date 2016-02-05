@@ -1,0 +1,44 @@
+<!--THIS IS NOT IN USE! SEE FOOTER-->
+
+
+<div class="row">
+    <div id="my-profile-container" class="small-12 columns">
+        <h1>Profil</h1>
+        <div ng-if="!user">
+            <p>Oups, vous n'auriez pas du vous retrouver ici...</p>
+            <a href="">Se connecter</a> <a ng-click>S'enregistrer</a>
+        </div>
+
+        <div ng-if="user" id="profile-form">
+            <table>
+                <tr>
+                    <td>Identifiant</td>
+                    <td><div ng-bind=profile.username class=profile-field></div></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><div ng-bind=profile.email class=profile-field></div></td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td><div ng-bind=profile.first_name class=profile-field></div></td>
+                </tr>
+                <tr>
+                    <td>Nom</td>
+                    <td><div ng-bind=profile.last_name class=profile-field></div></td>
+                </tr>
+            </table>
+            <div class="profile controls">
+                <div ng-if="profileChanged">
+                    Les changements n'ont pas été sauvegardés.
+                </div>
+                <div class="change-waiter">
+                    <!--TODO: add a waiter while the info is sent and saved-->
+                </div>
+                <button ng-click="saveUser()">
+                    Sauvegarder
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

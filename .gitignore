@@ -1,0 +1,14 @@
+
+node_modules/
+bower_components/
+
+*.log
+*.zip
+*.txt
+
+build/
+dist/
+wp/
+
+.brackets.json
+config.json

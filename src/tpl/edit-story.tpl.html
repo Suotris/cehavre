@@ -1,0 +1,137 @@
+<div class="row">
+    <div class="small-12 columns">
+        <h1>Racontez-nous votre histoire!</h1>
+        <div ng-if="!user">
+            <p>Vous devez être connecté pour publier une nouvelle histoire.</p>
+            <p>
+                <span class="editor-auth" ng-click="login()">me connecter</span> ou
+                <span class="editor-auth" ng-click="logup()">m'enregistrer</span>
+            </p>
+        </div>
+    </div>
+    <div id="editor-info" class="small-12 large-3 large-push-9 columns" ng-if="user">
+        <div class="side-box">
+            <label>
+                <i class="icon-location"></i>
+                Localisation
+            </label>
+            <div id="editor-lat">
+                <span><small>Lattitude:</small></span>
+                <span class="map-data">{{story.localisation.lat | number: 4}}</span>
+            </div>
+            <div id="editor-lng">
+                <span><small>Longitude:</small></span>
+                <span class="map-data">{{story.localisation.lng  | number: 4}}</span>
+            </div>
+            <label for="editor-address"></label>
+            <div id="editor-address">
+                <span><small>Adresse la plus proche:</small></span>
+                <span class="map-data">{{story.localisation.address}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="small-12 large-9 large-pull-3 columns" ng-if="user">
+        <div id="editor-map" story-map clickable="false" markers="markers" opt="mapOptions"  ondragend="dragEnd" onmapclick="mapClick"></div>
+    </div>
+    <div class="small-12 large-9 columns" ng-if="user">
+        <label for="editor-title">Titre</label>
+        <input type="text" placeholder="Titre" id="editor-title" ng-model="story.title" ng-change="mod()">
+        <label for="editor-content">Votre Histoire</label>
+        <textarea placeholder="Votre histoire..." id="editor-content" ng-model="story.content" ng-change="mod()"></textarea>
+    </div>
+    <div class="small-12 large-3 columns" ng-if="user">
+        <div id="editor-tags" class="side-box">
+            <div>
+                <label for="editor-tags-input">
+                    <i class="icon-tag"></i>
+                    Tags
+                </label>
+                <input type="text" id="editor-tags-input" ng-model="t.tags">
+                <button id="editor-tags-button" class="button" ng-click="updateTags()">
+                    ajouter
+                </button>
+            </div>
+            <div>
+                <small>Séparer les tags par une virgule</small>
+            </div>
+            <div id="editor-tags-selected">
+                <div class="editor-tag" ng-repeat="tag in story.tags">
+                    <i class="icon-cancel-circled editor-tag-del" ng-click="removeTag(tag)"></i>
+                    <span>{{tag}}</span>
+                </div>
+            </div>
+        </div>
+        <div id="editor-image" class="side-box">
+            <label>
+               <i class="icon-picture"></i>
+                Image
+            </label>
+            <div id="edit-image-loader"
+                 ng-if="!story.image.url">
+                <div class="edit-warning" ng-if="!story.ID">
+                    <small>
+                        Vous devez sauvegarder votre histoire
+                        avant de pouvoir ajouter une image
+                    </small>
+                </div>
+                <button class="button"
+                        type="file"
+                        accept="image/*"
+                        ngf-max-size="1MB"
+                        ngf-select="uploadImage($file, $invalidFiles)"
+                        ng-disabled="!story.ID">
+                    Choisir une image
+                </button>
+                <div ng-if="story.ID">
+                    <small>Préférer une image au format 16:9.</small>
+                    <small>Taille maximum: 1mb</small>
+                    <small>Formats: .jpg ou .png</small>
+                </div>
+            </div>
+            <div ng-if="story.image.url" id="editor-image-preview">
+                <img src="{{story.image.url}}" alt="">
+                <span id="editor-delete-image" ng-click="deleteImage()">
+                    Supprimer cette image
+                </span>
+            </div>
+        </div>
+        <div id="editor-controls" class="side-box">
+            <div ng-if="modified">
+                <span class="warning label">
+                    Les dernières modifications n'ont pas été sauvegardées
+                </span>
+            </div>
+            <div ng-if="error">
+                <span class="warning label">
+                    {{error}}
+                </span>
+            </div>
+            <div ng-if="success">
+                <span class="success label">
+                    {{success}}
+                </span>
+            </div>
+            <div id=editor-meta ng-if="story.date">
+                <small>Modifié la dernière fois le {{story.modified}}</small>
+            </div>
+            <div id="editor-buttons">
+                <button ng-inactive="!inactive" class="button" ng-click="save()" ng-active="modified" >
+                    <i class="icon-save"></i>
+                    Sauvegarder
+                </button>
+                <div class="edit-warning" ng-if="!story.ID">
+                    <small>
+                        Vous devez sauvegarder votre histoire
+                        avant de pouvoir la publier
+                    </small>
+                </div>
+                <button class="button"
+                        ng-click="publish()"
+                        ng-active="modified"
+                        ng-disabled="!story.ID">
+                    Publier
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

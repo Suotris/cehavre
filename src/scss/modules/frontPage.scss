@@ -1,0 +1,48 @@
+#front-map{
+    @media #{$small-only} {
+        height: 300px;
+    }
+    @media #{$medium-only} {
+        height: 600px;
+    }
+    @media #{$large-up} {
+        height: 800px;
+    }
+}
+
+#shuffle-row{
+    max-width: none;
+    @media #{$large-up} {
+        position: absolute;
+    }
+}
+
+#shuffle-container{
+    @media #{$large-up} {
+        position: relative;
+        top: -750px;
+    }
+}
+
+#last-stories-title{
+    text-align: center;
+}
+
+.story-feature{
+    font-family: serif;
+    background: $ghost;
+    border: 1px solid $silver;
+    padding: $block-grid-default-spacing / 2;
+    cursor: pointer;
+
+    h3{
+        max-height: 80px;
+        overflow: hidden;
+    }
+}
+
+.story-author{
+    color: $primary-color;
+    font-style: italic;
+    //font-size: $small-font-size;
+}

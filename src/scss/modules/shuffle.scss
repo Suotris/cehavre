@@ -1,0 +1,142 @@
+//Shuffle widget
+
+//TODO: add angular anim classes
+
+story-shuffle>div{
+    border: 1px solid $gainsboro;
+    background-color: rgba($white, .9);
+    padding: $block-grid-default-spacing / 2;
+
+    margin-left: -15px;
+    margin-right: -15px;
+
+
+    @media #{$large-up}{
+        margin-left: 0;
+        margin-right: 0;
+}
+}
+
+#random-story-trigger{
+    padding: 6px;
+    color: $primary-color;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+
+    div {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        margin-right: 2rem;
+    }
+}
+
+#shuffle-controls{
+    height: 37px;
+    overflow-y: hidden;
+}
+
+story-shuffle{
+    z-index: 1;
+}
+
+#random-story-trigger:hover, .snap-close:hover, .snap-content:hover{
+    //background-color: $vapor;
+}
+
+.random-story-widget{
+    border: none;
+    margin-bottom: 0;
+}
+
+#search-widget {
+    display: inline-block;
+    width: 49%;
+    margin-bottom: 0;
+}
+
+/* Animating height does not work with the ellipsis module. So it is turned of for the time being. If animation is achieved, the shuffle widget conditional visibility should be abandonned to avoid height flickering.
+
+.random-story-widget.ng-hide-add, .random-story-widget.ng-hide-remove{
+    height: auto;
+    transition: all ease-in 0.3s;
+}
+
+//TODO: change line-height to height. Now still buggy.
+.random-story-widget.ng-hide{
+    line-height: 0;
+}
+*/
+
+.snap{
+    overflow: hidden;
+}
+
+#snap-offset{
+    height: 2.5rem;
+}
+
+.snap-content{
+    font-family: serif;
+
+    @media #{$large-up} {
+        max-height: 600px;
+    }
+
+    div{
+        display: inline-block;
+    }
+
+    img{
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+}
+
+#snap-content-more{
+    @extend a;
+    text-decoration: underline;
+}
+
+#snap-title, .found-stories h3{
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover{
+        color: $primary-color;
+    }
+}
+
+
+.snap-excerpt{}
+.snap-close, .totop{
+    display: block;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.totop{
+    overflow: auto;
+}
+
+.snap-close, .totop>a, #search-blur-button{
+    text-decoration: underline;
+    color: $info-color;
+    float: right;
+    cursor: pointer;
+
+}
+
+#search-blur-button{
+    float: none;
+    display: inline-block;
+}
+
+.search-focused {
+    width: calc(100% - 80px) !important;
+}
+
+#search-widget-results {
+    margin-top: 1rem;
+}

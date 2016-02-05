@@ -1,0 +1,36 @@
+{
+  "name": "cehavre",
+  "version": "0.0.0",
+  "authors": [
+    "Tristan Hamel <hamel.tristan@laposte.net>"
+  ],
+  "description": "a wordpress site for ce havre...",
+  "main": "index.php",
+  "keywords": [
+    "wordpress",
+    "angular",
+    "map",
+    "stories"
+  ],
+  "license": "MIT",
+  "homepage": "tristanhamel.eu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-animate": "~1.4.8",
+    "angular-foundation": "~0.8.0",
+    "angular-foundation-sass": "*",
+    "angular-google-maps": "~2.2.1",
+    "angular-sanitize": "~1.4.8",
+    "angular-scroll": "~1.0.0",
+    "angular-socialshare": "~1.4.4",
+    "lodash": "~3.10.1",
+    "ngmap": "~1.14.15"
+  }
+}

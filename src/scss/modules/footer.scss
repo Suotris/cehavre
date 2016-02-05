@@ -1,0 +1,63 @@
+$footer-color: rgba(scale-color($button-bg-color, $lightness: $button-function-factor), .8);
+
+footer{
+    background: linear-gradient($footer-color, $footer-color), url('./assets/images/banner-medium.jpg');
+    background-size: cover;
+}
+
+#histoire-footer, #footer-social, #footer-brand, #footer-cgu{
+    margin: 0 auto;
+    width: 290px;
+    float: none;
+    text-align: center;
+}
+
+#footer-brand{
+    text-align: center;
+    cursor: pointer;
+}
+
+#histoire-footer button {
+    font-size: $h3-font-size;
+    margin-top: 20px;
+    color: $white;
+    background-color: transparent;
+    border: 1px solid $white;
+    transition: all linear .2s;
+
+    &:hover{
+        background-color: $button-bg-hover;
+    }
+}
+
+#footer-social{
+
+    display: none;
+
+    div{
+        display: inline-block;
+    }
+
+    i{
+        font-size: $h1-font-size*2;
+        color: $secondary-color;
+        cursor: pointer;
+        transition: all linear .2s;
+    }
+    i:hover{
+        color: $white;
+    }
+}
+
+#footer-cgu {
+    margin-top: 1rem;
+
+    a {
+        color: $white;
+    }
+}
+
+.credits a{
+    color: $jet;
+    text-decoration: underline;
+}

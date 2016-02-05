@@ -1,0 +1,73 @@
+<div>
+    <div id="shuffle-controls"
+         ng-hide="showStory">
+        <input type="text"
+               placeholder="Rechercher..."
+               id="search-widget"
+               ng-focus="searchFocused = true"
+               ng-class="{'search-focused': searchFocused}"
+               ng-model="searchTerm">
+        <span id="search-blur-button"
+              ng-click="searchFocused = false"
+              ng-show="searchFocused">
+            fermer
+        </span>
+        <div ng-hide="searchFocused"
+             id="random-story-trigger">
+            <div ng-click="random.story()">
+                Une histoire au hasard
+                <i class="icon-shuffle"></i>
+            </div>
+        </div>
+    </div>
+    <div id="search-widget-results" ng-show="searchFocused">
+<!--
+    TODO: make it possible to search by field...
+        <input type="checkbox" ng-model=search.title>
+        <label for="">Titre</label>
+        <input type="checkbox" ng-model=search.author>
+        <label for="">Auteur</label>
+        <input type="checkbox"  ng-model=search.tags>
+        <label for="">Tags</label>
+        <input type="checkbox"  ng-model=search.content>
+        <label for="">Contenu</label>
+-->
+        <div class="found-stories" ng-if="searchTerm">
+            <div ng-repeat="found in stories | filter:searchTerm">
+                <h3 ng-click="setStory(found.ID)">{{found.title}}</h3>
+                <div class="story-author">
+                    Raconté par {{found.author.name}}
+                </div>
+                <div><small>{{found.date}}</small></div>
+                <div class="post-tags" ng-if="found.tags[0]">
+                    <i class="icon-tag"></i>
+                    <span ng-repeat="tag in found.tags">
+                        <small>{{tag}}</small>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="random-story-widget" ng-show="showStory">
+        <div class="snap">
+            <div>
+                <div class="snap-close" ng-click="random.clear()">
+                  fermer
+                </div>
+                <div id="snap-offset"></div>
+                <h3 id="snap-title" ng-bind-html="story.title" ng-click="goto()"></h3>
+                <div class="story-author">
+                        Raconté par {{story.author.name}}
+                </div>
+            </div>
+            <div class="snap-content">
+                <img src="{{img.s}}" alt="">
+                <span  ng-bind-html="story.excerpt"></span>
+                <span id="snap-content-more" ng-click="goto()">lire la suite</span>
+            </div>
+            <div class="totop hide-for-large-up" ng-click="toMap()">
+                <a href="#front-map" du-smooth-scroll>Retour à la carte</a>
+            </div>
+        </div>
+    </div>
+</div>

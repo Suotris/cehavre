@@ -1,0 +1,57 @@
+
+#sc-widget{
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+}
+
+#player-widget{
+    padding: $column-gutter/2;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    background-color: $vapor;
+}
+
+.progress .meter {
+    -webkit-transition: width 1s linear;
+    transition: width 1.2s linear;
+}
+
+#player-player>table{
+    width: 100%;
+}
+
+#button-td{
+    width: 5rem;
+
+    div{
+        display: inline-block;
+        border: 1px solid $primary-color;
+        border-radius: 50%;
+        background-color: $white;
+    }
+
+    i{
+        font-size: $h2-font-size;
+        color: $primary-color;
+        cursor: pointer;
+    }
+}
+
+.timer-td{
+    width: 3rem;
+}
+
+#player-progress-container{
+    height: 20px;
+    background-color: $gainsboro;
+}
+
+#player-progress{
+    background-color: $primary-color;
+    height: 100%;
+}
+
+#player-timer2{
+    text-align: right;
+}

@@ -1,0 +1,30 @@
+.top-bar{
+    z-index: 100;
+}
+
+.name img{
+    transform: scale(0.7,0.7);
+    cursor: pointer;
+}
+
+.menu-icon i:before {
+    font-size: 1.5rem;
+}
+
+.top-bar .toggle-topbar.menu-icon a {
+    padding: 0.2rem 1rem 0 1rem;
+}
+
+#top-bar-container {
+    border-bottom: 1px solid $silver;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+.top-bar button.button {
+    color: $oil;
+    background-color: $white;
+    border: 1px solid $primary-color;
+    line-height: 0.875rem;
+    margin-left: 1rem;
+}

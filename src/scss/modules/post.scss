@@ -1,0 +1,29 @@
+#post-title{
+    font-family: serif;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.post-tags {
+    color: $primary-color;
+    //background-color: $primary-color;
+    margin-right: .5rem;
+    padding: 0 .2rem;
+}
+
+.post-content {
+    margin-top: 1rem;
+    font-family: serif;
+}
+
+#post-meta {
+    color: $primary-color;
+    margin-bottom: 1rem;
+}
+
+.post-content:first-letter {
+    float: left;
+    font-size: 72px;
+    line-height: 72px;
+    margin: 9px 6px 0 0;
+}

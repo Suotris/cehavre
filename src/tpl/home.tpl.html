@@ -1,0 +1,33 @@
+<div story-map id="front-map" markers="markers" onmarkerclick="onclick"></div>
+<div id="shuffle-row" class="row">
+    <div id="shuffle-container" class="small-12 large-6 columns">
+
+        <story-shuffle></story-shuffle>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <h1 id="last-stories-title">Nos dernières histoires</h1>
+    </div>
+    <div class="small-12 xlarge-6 columns" recent-stories>
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 xlarge-block-grid-1">
+            <li ng-repeat="newStory in stories | orderBy: -date| limitTo: 3"
+                ng-click="go(newStory.slug)">
+                <div class="story-feature">
+                    <h3 ng-bind-html="newStory.title" data-ellipsis></h3>
+                    <div class="story-author">
+                        Raconté par {{newStory.author.name}}
+                    </div>
+                    <div class="post-tags">
+                        <i class="icon-tag"></i>
+                        <span ng-repeat="tag in newStory.tags | limitTo: 4">
+                            <small>{{tag}}</small>
+                        </span>
+                    </div>
+                    <div ng-bind-html ="newStory.excerpt">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

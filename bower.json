@@ -1,0 +1,6 @@
+{
+  "name": "cehavre",
+  "dependencies": {
+    "ng-file-upload": "~11.0.0"
+  }
+}

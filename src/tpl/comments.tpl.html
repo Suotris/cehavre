@@ -1,0 +1,46 @@
+<div class="comment-count">
+    <i class="icon-chat"></i> {{comments.length}}
+</div>
+<div class="comment-block" ng-repeat="comment in comments">
+    <div class="comment-head">
+        <span class=comment-author>{{comment.author_name}}</span>
+        <span class="comment-date">{{comment.date | date: "dd/MM/yyyy"}}</span>
+    </div>
+    <div class="comment-content" ng-bind-html="comment.content"></div>
+</div>
+<div class="comment-closed" ng-if="currentStory.comment_status != 'open'">
+    <p>
+        Les commentaires sont désactivés.
+    </p>
+</div>
+<div class="comment-form-container" ng-if="currentStory.comment_status=='open'">
+    <form novalidate name="commentForm" class="comment-form">
+        <textarea placeholder="Saisissez votre commentaire..."
+                  ng-model ="newComment.content"
+                  required>
+        </textarea>
+        <label for="newComment_author">
+            Votre nom:*
+        </label>
+        <input name="newComment_author"
+               type="text"
+               ng-model="newComment.author_name"
+               ng-minlength="3"
+               ng-readonly="user"
+               required>
+        <label for="newComment_author_email">
+            Votre email:
+        </label>
+        <input name="newComment_author_email"
+               type="email"
+               name="email"
+               ng-model="newComment.author_email"
+               ng-readonly="user"
+               required>
+        <button type="submit"
+                ng-click="sendComment()"
+                ng-disabled="commentForm.$invalid">
+            Publier
+        </button>
+    </form>
+</div>

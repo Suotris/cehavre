@@ -1,0 +1,32 @@
+#logup-container{
+    max-width: 450px;
+    background-color: $vapor;
+    padding: 0;
+    min-height: 500px;
+}
+
+#logup-title{
+    background-color: $primary-color;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    h3 {
+        color: white;
+    }
+}
+
+#logup-main, #logup-success{
+    padding: 1rem;
+}
+
+#email-notice {
+    color: $alert-color;
+
+    a {
+        color: $alert-color;
+        text-decoration: underline;
+    }
+}
+
+@placeholder($primary-color);

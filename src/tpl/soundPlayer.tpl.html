@@ -1,0 +1,47 @@
+
+<iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=http://api.soundcloud.com/users/1539950/favorites"></iframe>
+
+<div id="player-widget"
+     ng-if="hasSound">
+    <div id="player-spinner"
+         ng-if="!loaded">
+        La bande son est en cours de chargement ...
+    </div>
+    <div id="player-player"
+         ng-if="loaded">
+         <table>
+             <tr>
+                <td id="button-td">
+                    <div id="player-button" ng-click="play()">
+                        <i ng-if="!playing" class="icon-play"></i>
+                        <i ng-if="playing" class="icon-pause"></i>
+                    </div>
+                </td>
+                <td class="timer-td">
+                    <div id="player-timer1">
+                        <small>{{elapsed | durationFilter }}</small>
+
+                    </div>
+                </td>
+                <td id="bar-td">
+                    <div id="player-progress-container" ng-click="barClick($event)">
+                        <div id="player-progress" style="width:{{elapsedPc}}%"></div>
+                    </div>
+
+<!--
+                    <progressbar id="player-progress"
+                                 value=elapsed
+                                 max="duration"
+                                 ng-click="barClick($event)">
+                    </progressbar>
+-->
+                </td>
+                <td class="timer-td">
+                     <div id="player-timer2">
+                         <small>{{duration | durationFilter}}</small>
+                     </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+comments{
+    border-top: 1px solid $gainsboro;
+    display: block;
+    max-width: 650px;
+}
+
+.comment-count{
+    color: $info-color;
+    font-size: $h5-font-size;
+    margin: 1rem 0;
+}
+
+.comment-block, .comment-count, .comment-closed, .comment-form-container{
+    @media #{$medium-up}{
+        margin-left: 5rem;
+    }
+}
+
+.comment-author{
+    font-size: $h4-font-size;
+    font-weight: bold;
+}
+
+.comment-date{
+    color: $info-color;
+}
+
+.comment-form{
+    border-top: 1px solid $gainsboro;
+    padding: 1rem 0;
+
+    textarea{
+        resize: vertical;
+        max-height: 300px;
+        min-height: 100px;
+    }
+}
+

@@ -1,0 +1,49 @@
+.login-options span{
+    color: $info-color;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#login-title{
+    background-color: $primary-color;
+    text-align: center;
+    padding: 1rem;
+    margin: -2rem -2rem 1rem -2rem;
+
+    h3 {
+        color: white;
+        //margin-left: 4rem;
+        text-align: center;
+    }
+}
+
+.login-username label, .login-password label {
+    padding: 9px;
+}
+
+#wppb-submit{
+    @extend .button;
+    margin-bottom: 0;
+}
+
+#forgot-pw{
+    margin-top: 1rem;
+    border-top: 1px solid $gainsboro;
+}
+
+.wppb-send-credentials-checkbox {
+    display: none;
+}
+
+.wppb-default-e-mail label>span:after{
+    content: ' (1)';
+    color: $alert-color;
+}
+
+p.form-submit{
+    margin-bottom: 0;
+}
+
+.wppb-error>a {
+    display: none;
+}

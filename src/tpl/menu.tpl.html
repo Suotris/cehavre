@@ -1,0 +1,74 @@
+        <top-bar>
+           <ul class="title-area">
+               <li class="name">
+                   <h3>
+                        <a href="/">
+                           BRAND
+                        </a>
+                   </h3>
+               </li>
+               <li class="menu-icon" toggle-top-bar>
+                   <a href="#"><i class="icon-menu"></i></a>
+               </li>
+           </ul>
+           <top-bar-section>
+               <ul class="left">
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="about">Qui sommes-nous?</a></li>
+                    <li>
+                        <button class="button hide-for-small-only" type="button" ng-click="newStory()">
+                            Racontez votre histoire!
+                        </button>
+                    </li>
+               </ul>
+           </top-bar-section>
+           <top-bar-section>
+               <ul class="right">
+                    <li has-dropdown>
+                         <a href="#">
+                             <span ng-if="user">{{user.display_name}}</span>
+                             <i class="icon-user"></i>
+                         </a>
+                         <ul top-bar-dropdown>
+                             <li ng-hide="user">
+                                 <a ng-click="login()">
+                                     <i class="icon-login"></i>
+                                     Se connecter
+                                 </a>
+                             </li>
+                             <li ng-hide="user">
+                                 <a ng-click="logup()">
+                                     <i class="icon-user-plus"></i>
+                                     S'enregistrer
+                                 </a>
+                             </li>
+                             <li ng-show="user">
+                                 <a href="my-stories">
+                                     <i class="icon-comment"></i>
+                                     Mes histoires
+                                 </a>
+                             </li>
+                             <li ng-show="user">
+                                 <a href="my-profile">
+                                     <i class="icon-user"></i>
+                                     Mon profil
+                                 </a>
+                             </li>
+                             <li ng-show="<?php echo current_user_can('edit_users'); ?>">
+                                 <a href="wp-admin">
+                                    <i class="icon-sprocket"></i>
+                                     Administration
+                                 </a>
+                             </li>
+                             <li ng-show="user">
+                                 <a href="<?php echo wp_logout_url( home_url() ); ?>">
+                                     <i class="icon-logout"></i>
+                                     Se déconnecter
+                                 </a>
+                             </li>
+                         </ul>
+                    </li>
+
+               </ul>
+           </top-bar-section>
+        </top-bar>

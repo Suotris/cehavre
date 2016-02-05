@@ -1,0 +1,71 @@
+.myStories{
+    margin-bottom: 3rem;
+}
+
+.myStories-title, .myStories-links, .myStory-status{
+    display: inline-block;
+}
+
+.myStories-links{
+    color: $oil;
+    font-size: $h4-font-size;
+    cursor: pointer;
+
+    i:hover{
+        color: $primary-color;
+    }
+}
+
+.myStories-pending{
+    background-color: rgba($secondary-color, .2);
+    border-left: 10px solid $secondary-color;
+
+    .myStory-status{
+        color: $secondary-color
+    }
+}
+
+.myStories-publish{
+    background-color: rgba($primary-color, .2);
+    border-left: 10px solid $primary-color;
+
+    .myStory-status{
+        color: $primary-color
+    }
+}
+
+.myStories-draft{
+    background-color: rgba($info-color, .2);
+    border-left: 10px solid $info-color;
+
+    .myStory-status{
+        color: $info-color
+    }
+}
+
+.myStory-status{
+    font-weight: bold;
+}
+
+.myStories-date{
+    font-style: italic;
+}
+
+
+//Delete modal
+
+#delete-modal{
+    p{
+        text-align: center;
+    }
+}
+
+#delete-modal-buttons{
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+
+    .button{
+        margin: 0 1rem;
+    }
+}

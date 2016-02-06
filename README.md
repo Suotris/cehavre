@@ -21,5 +21,5 @@ The code is amended by gulp tasks in order to make scripting less tedious:
 * scripts wrapped in self-executing function handled by gulp-wrap
 * templates concatenated in templateCache with gulp-angular-templateCache.
 
-####Points of intetrest
+####Points of interest
 In addition of showcasing handling of RESTful service, the application also provides example of integration of GoogleMaps API V3 with dedicated angular module. The website also has capabilities for handling API requests to SoundCloud although the client hasn't published posts with soundtracks yet.

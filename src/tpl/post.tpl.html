@@ -13,7 +13,7 @@
                 </span>
             </div>
         </div>
-        <sound-player url=currentStory.sound>
+        <sound-player ng-if="currentStory.sound" url=currentStory.sound>
         </sound-player>
         <img ng-if="currentStory.image.url"
              interchange="[{{img.small}}, (small)],

@@ -2,7 +2,7 @@
 //NOTE: to simplify gulp task, this module is temporarily put here.
 angular.module('wpAngularAuth', []);
 
-angular.module('app', ['ngAnimate', 'ngRoute', 'ngSanitize', 'mm.foundation', 'ngMap', '720kb.socialshare', 'duScroll', 'ngFileUpload', 'templates', 'wpAngularAuth'])
+angular.module('app', ['ngAnimate', 'ngRoute', 'ngSanitize', 'mm.foundation', 'ngMap', '720kb.socialshare', 'duScroll', 'ngFileUpload', 'templates'])
 
 .config(function($routeProvider, $locationProvider, $httpProvider, config){
 
@@ -127,10 +127,6 @@ angular.module('app', ['ngAnimate', 'ngRoute', 'ngSanitize', 'mm.foundation', 'n
             }
         }
     })
-    .when('/lolo', {
-        templateUrl: 'login.tpl.html'
-    })
-
     .otherwise({redirectTo: '/'});
 
     $locationProvider.html5Mode(true);

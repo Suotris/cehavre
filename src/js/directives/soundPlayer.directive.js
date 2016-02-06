@@ -8,8 +8,7 @@ function soundPlayer(config){
         },
         controller: function($scope, $timeout, $sce){
 
-            var widgetIframe = document.getElementById('sc-widget'),
-                widget       = SC.Widget(widgetIframe);
+            var widgetIframe, widget;
 
             $scope.play = toggleSound;
             $scope.barClick = barClick;
@@ -18,6 +17,8 @@ function soundPlayer(config){
             $scope.elapsedPc = 0;
 
             if($scope.url){
+                widgetIframe = document.getElementById('sc-widget');
+                widget       = SC.Widget(widgetIframe);
                 $scope.hasSound = true;
                 widget.load($scope.url, {
                     auto_play : false,
